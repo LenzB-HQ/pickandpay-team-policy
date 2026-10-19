@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get the app | P&amp;P Team</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a href="index.html">P&amp;P <span>Team</span></a></header>
+<nav><a href="index.html">Home</a><a href="privacy.html">Privacy policy</a><a href="delete-account.html">Delete your account</a><a href="support.html">Support</a></nav>
+<main>
+<h1>Get the P&amp;P Team app</h1>
+<p id="msg">Choose your phone to open the store.</p>
+<p id="soon" hidden><strong>Coming soon.</strong> The app is not in the stores yet. Your company will tell you when it is ready.</p>
+<ul id="buttons">
+<li><a id="android" href="#">Android: open Google Play</a></li>
+<li><a id="iphone" href="#">iPhone: open the App Store</a></li>
+</ul>
+<p>The app is for the staff of one company and cannot be used without an invite from your employer.</p>
+</main>
+<footer>&copy; 2026 [PLACEHOLDER: publisher legal name]. P&amp;P Team is a work app for one company's staff.</footer>
+<script>
+// Store links are filled in after approval. Until then a link that does not start with https:// is treated as "not live".
+var PLAY = "[PLACEHOLDER: Google Play URL]";
+var APPLE = "[PLACEHOLDER: App Store URL]";
+function live(u) { return /^https:\/\//.test(u); }
+var a = document.getElementById("android"), i = document.getElementById("iphone");
+if (live(PLAY)) a.href = PLAY; else a.parentNode.hidden = true;
+if (live(APPLE)) i.href = APPLE; else i.parentNode.hidden = true;
+if (!live(PLAY) && !live(APPLE)) {
+  document.getElementById("msg").hidden = true;
+  document.getElementById("soon").hidden = false;
+} else {
+  var ua = navigator.userAgent || "";
+  var target = /android/i.test(ua) ? PLAY : (/iPhone|iPad|iPod/i.test(ua) ? APPLE : "");
+  if (live(target)) { window.location.replace(target); }
+}
+</script>
+</body>
+</html>
