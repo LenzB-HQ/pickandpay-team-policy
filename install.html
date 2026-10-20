@@ -20,11 +20,11 @@
 </ul>
 <p>The app is for the staff of one company and cannot be used without an invite from your employer.</p>
 </main>
-<footer>&copy; 2026 [PLACEHOLDER: publisher legal name]. P&amp;P Team is a work app for one company's staff.</footer>
+<footer>&copy; 2026 Lenz B. P&amp;P Team is a work app for one company's staff.</footer>
 <script>
 // Store links are filled in after approval. Until then a link that does not start with https:// is treated as "not live".
-var PLAY = "[PLACEHOLDER: Google Play URL]";
-var APPLE = "[PLACEHOLDER: App Store URL]";
+var PLAY = ""; // set to the https:// Google Play link after approval
+var APPLE = ""; // set to the https:// App Store link after approval
 function live(u) { return /^https:\/\//.test(u); }
 var a = document.getElementById("android"), i = document.getElementById("iphone");
 if (live(PLAY)) a.href = PLAY; else a.parentNode.hidden = true;
